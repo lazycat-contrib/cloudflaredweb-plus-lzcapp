@@ -1,0 +1,24 @@
+zc-sdk-version: "0.1"
+name: Cloudflared
+package: lazycat.community.app.cloudfalred-web
+version: 2025.5.0
+description: Cloudflared Tunnel Web
+homepage: https://github.com/dockers-x/Cloudflared-web
+author: dockers-x
+application:
+    subdomain: cloudfalred-web
+    background_task: true
+    multi_instance: false
+    gpu_accel: false
+    kvm_accel: false
+    usb_accel: false
+    routes:
+        - /=http://host.lzcapp:14333/
+services:
+    cloudfalred-web:
+        network_mode: host
+        image: docker.hlmirror.com/czyt/cloudflared-web:2025.5.0
+        binds:
+            - /lzcapp/var/config:/config
+        environment:
+            - PROTOCOL=http2
