@@ -1,7 +1,7 @@
 zc-sdk-version: "0.1"
 name: Cloudflared
 package: lazycat.community.app.cloudfalred-web
-version: 2025.6.0
+version: 2025.6.1
 description: Cloudflared Tunnel Web
 homepage: https://github.com/dockers-x/Cloudflared-web
 author: dockers-x
@@ -17,7 +17,7 @@ application:
 services:
   cloudfalred-web:
     network_mode: host
-    image: docker.1ms.run/czyt/cloudflared-web:2025.6.0
+    image: docker.1ms.run/czyt/cloudflared-web:2025.6.1
     binds:
       - /lzcapp/var/config:/config
     environment:
