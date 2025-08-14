@@ -8,10 +8,6 @@ author: dockers-x
 application:
     subdomain: cloudfalred-web
     background_task: true
-    multi_instance: false
-    gpu_accel: false
-    kvm_accel: false
-    usb_accel: false
     routes:
         - /=http://host.lzcapp:14333/
 services:
