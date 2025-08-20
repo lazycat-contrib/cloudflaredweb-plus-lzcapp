@@ -1,0 +1,44 @@
+params:
+    - id: enable_basic_auth
+      type: bool
+      name: "enable basic auth"
+      description: "Enable basic authentication"
+      default_value: false
+
+    - id: basic_auth_user
+      type: string
+      name: "basic auth user"
+      description: "Basic auth user"
+      default_value: "admin"
+      optional: true
+
+    - id: basic_auth_password
+      type: string
+      name: "basic auth password"
+      description: "Basic auth password"
+      default_value: "admin"
+      optional: true
+
+    - id: protocol
+      type: string
+      name: "protocol"
+      description: "the protocol you want to use,auto ,http2,quic"
+      default_value: "http2"
+
+locales:
+    zh:
+        enable_basic_auth:
+            name: "启用基本身份验证"
+            description: "启用基本身份验证"
+
+        basic_auth_user:
+            name: "基本身份验证用户名"
+            description: "基本身份验证用户名"
+
+        basic_auth_password:
+            name: "基本身份验证密码"
+            description: "基本身份验证密码"
+
+        protocol:
+            name: "协议"
+            description: "指定用于在 cloudflared 和 Cloudflare 全球网络之间建立连接的协议。可用值为 auto 、 http2 和 quic"

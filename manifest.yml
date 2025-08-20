@@ -1,15 +1,22 @@
-zc-sdk-version: "0.1"
 name: Cloudflared
 package: lazycat.community.app.cloudfalred-web
 version: 2025.8.0
+min_os_version: 1.3.8
 description: Cloudflared Tunnel Web
 homepage: https://github.com/dockers-x/Cloudflared-web
 author: dockers-x
 application:
     subdomain: cloudfalred-web
     background_task: true
-    routes:
-        - /=http://host.lzcapp:14333/
+    public_path:
+{{if .U.enable_basic_auth}}
+        - /
+{{end}}
+
+
+    upstreams:
+        - location: /
+          backend: http://host.lzcapp:14333/
 services:
     cloudfalred-web:
         network_mode: host
@@ -17,4 +24,8 @@ services:
         binds:
             - /lzcapp/var/config:/config
         environment:
-            - PROTOCOL=http2
+            - PROTOCOL={{.U.protocol}}
+{{if .U.enable_basic_auth}}
+            - BASIC_AUTH_USER={{.U.basic_auth_user}}
+            - BASIC_AUTH_PASS={{.U.basic_auth_password}}
+{{end}}
