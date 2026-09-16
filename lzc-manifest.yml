@@ -6,16 +6,14 @@ application:
     - /
 {{end}}
 
-
   upstreams:
     - location: /
       backend: http://host.lzcapp:14333/
-
 services:
   cloudfalred-web:
     network_mode: host
-    # upstream: wisdomsky/cloudflared-web:2025.9.0
-    image: docker.1ms.run/wisdomsky/cloudflared-web:2025.9.0
+    # upstream: wisdomsky/cloudflared-web:2026.9.1
+    image: docker.1ms.run/wisdomsky/cloudflared-web:2026.9.1
     binds:
       - /lzcapp/var/config:/config
     environment:

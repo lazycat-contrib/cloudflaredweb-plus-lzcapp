@@ -1,5 +1,5 @@
 package: lazycat.community.app.cloudfalred-web
-version: 2025.9.0
+version: 2026.9.1
 name: Cloudflared
 description: "Cloudflared Tunnel Web"
 min_os_version: "1.3.8"
